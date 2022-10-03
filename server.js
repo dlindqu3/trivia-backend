@@ -1,17 +1,26 @@
 require('dotenv').config()
 const express = require('express') 
+const cors = require('cors')
 const mongoose = require('mongoose')
 const triviaRoutes = require('./routes/trivia')
 
 const app = express(); 
 
+const allowedOrigins = ['http://localhost:3000']
+
+const options = {
+  origin: allowedOrigins
+}
+
 // .use for middleware
+app.use(cors(options))
+
 app.use((req, res, next) => {
   console.log(req.path, " ", req.method)
   next()
 })
 
-// routes
+// middleware/routes
 app.use('/api/trivia', triviaRoutes)
 
 // db connection
