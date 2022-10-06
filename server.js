@@ -3,6 +3,7 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const triviaRoutes = require('./routes/trivia')
+const userRoutes = require("./routes/user")
 
 const app = express(); 
 
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
 
 // middleware/routes
 app.use('/api/trivia', triviaRoutes)
+app.use("/api/user", userRoutes)
 
 // db connection
 mongoose.connect(process.env.MONGO_URI)
