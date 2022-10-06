@@ -15,6 +15,7 @@ const options = {
 
 // .use for middleware
 app.use(cors(options))
+app.use(express.json())
 
 app.use((req, res, next) => {
   console.log(req.path, " ", req.method)
