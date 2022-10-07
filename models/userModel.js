@@ -21,7 +21,7 @@ const userSchema = new Schema({
   }
 })
 
-// make a new static method on our Users: 
+// static methods on our Users: 
 userSchema.statics.signup = async function(email, password) {
 
   // validate
@@ -46,6 +46,27 @@ userSchema.statics.signup = async function(email, password) {
 
   const user = await this.create({ email, password: hash })
   return user 
+}
+
+userSchema.statics.login = async function (email, password){
+  // validate
+  if (!email || !password){
+    throw Error('All fields are required')
+  }
+
+  const user = await this.findOne({ email })
+  if (!user){
+    throw Error('Email not correct')
+  }
+
+  // compare plain password vs hashed password 
+  const match = await bcrypt.compare(password, user.password)
+
+  if (!match){
+    throw Error('Password not correct')
+  }
+
+  return user
 }
 
 module.exports = mongoose.model('User', userSchema)

@@ -8,7 +8,19 @@ const createToken = (_id) => {
 
 // login 
 const loginUser = async (req, res) => {
-  res.json({mssg: 'login user'})
+
+  const email = req.body.email 
+  const password = req.body.password
+
+  try {
+    const user = await User.login(email, password)
+    const token = createToken(user._id)
+    // this token includes the header, payload, and secret
+    // send token to browser here: 
+    res.status(200).json({email, token})
+  } catch(error){
+    res.status(400).json({error: error.message})
+  }
 }
 
 // signup 
