@@ -28,3 +28,12 @@
     - secret string: keep it secret, keep it safe 
   - later, a given request's header + payload are hashed into a secret, which must match the signature on the server 
   - don't publish secret in code 
+
+
+## Citations 
+1. The Net Ninja, "MERN Authentication Tutorial #1 - Intro & Starter Project", [link](https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT)
+2. The Net Ninja, "MERN Authentication Tutorial #2 - User Routes, Controller & Model", [link](https://www.youtube.com/watch?v=b5LDOW8WJ9A&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=2)
+3. The Net Ninja, "MERN Authentication Tutorial #3 - Signing Up & Hashing Passwords", [link](https://www.youtube.com/watch?v=mjZIv4ey0ps&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=3)
+4. The Net Ninja, "MERN Authentication Tutorial #4 - Email & Password Validation", [link](https://www.youtube.com/watch?v=sRFI6L0a38E&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=4)
+5. The Net Ninja, "MERN Authentication Tutorial #6 - Signing Tokens", [link](https://www.youtube.com/watch?v=MsudBMepwO8&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=6)
+6. The Net Ninja, "MERN Authentication Tutorial #7 - Logging Users In", [link](https://www.youtube.com/watch?v=Jdt0mygy-74&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=7)
